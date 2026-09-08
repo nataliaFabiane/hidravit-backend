@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Soro;
 
 class Paciente extends Model
 {
@@ -18,4 +19,9 @@ class Paciente extends Model
     protected $casts = [
         'data_nascimento' => 'date',
     ];
+
+    public function soros()
+    {
+        return $this->hasMany(Soro::class);
+    }
 }
